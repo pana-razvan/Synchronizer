@@ -81,6 +81,7 @@ def sync_folders(source, replica, log):
                f'-------------------------------------------------------------------', log_file_path)
 
 
+# This function will take a file path input and will return the hexadecimal representation of the file's hash
 def get_md5(file_path):
     with open(file_path, 'rb') as f:
         md5 = hashlib.md5()
@@ -89,6 +90,7 @@ def get_md5(file_path):
         return md5.hexdigest()
 
 
+# Function for writing actions to the log file and printing them to the console
 def log_action(action, log_file):
     with open(log_file, 'a') as f:
         f.write(f'{time.strftime("%Y-%m-%d %H:%M:%S")} - {action}\n')
